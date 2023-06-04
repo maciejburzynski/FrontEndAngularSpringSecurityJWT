@@ -17,5 +17,6 @@ export class LoginService {
 
   getHello() {
     return this.httpClient.get("http://localhost:8080/hello-user")
+    console.log(this.httpClient.get("http://localhost:8080/hello-user"))
   }
 }

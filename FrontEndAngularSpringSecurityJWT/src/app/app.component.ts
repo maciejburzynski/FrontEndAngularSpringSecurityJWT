@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {LoginService} from "./login.service";
 import {HttpHeaders} from "@angular/common/http";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,9 @@ export class AppComponent implements OnInit {
   password = '';
   header = new HttpHeaders();
 
-  constructor(private loginService: LoginService) {
+  constructor(
+    private router: Router,
+    private loginService: LoginService) {
   }
 
   login() {
