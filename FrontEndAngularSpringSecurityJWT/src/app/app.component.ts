@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {LoginService} from "./login.service";
+import {LoginService} from "./login/login.service";
 import {HttpHeaders} from "@angular/common/http";
 import {Router} from '@angular/router';
 
@@ -20,20 +20,24 @@ export class AppComponent implements OnInit {
     private loginService: LoginService) {
   }
 
-  login() {
-    return this.loginService
-      .loginPost({username: this.username, password: this.password})
-      .subscribe((response: any) => this.setTokenInHeaders(response.token))
+  // login() {
+  //   return this.loginService
+  //     .loginPost({username: this.username, password: this.password})
+  //     .subscribe((response: any) => this.setTokenInHeaders(response.token))
+  //
+  // }
 
-  }
-
-  setTokenInHeaders(token: any) {
-    this.header = this.header.set("Authorization", "Bearer " + token)
-    console.log(this.header.get("Authorization"))
-    this.loginService.getHello()
-
-  }
+  // setTokenInHeaders(token: any) {
+  //   this.header = this.header.set("Authorization", "Bearer " + token)
+  //   console.log(this.header.get("Authorization"))
+  //   this.loginService.getHello()
+  //
+  // }
 
   ngOnInit(): void {
+  }
+
+  navigate() {
+    this.router.navigateByUrl("")
   }
 }

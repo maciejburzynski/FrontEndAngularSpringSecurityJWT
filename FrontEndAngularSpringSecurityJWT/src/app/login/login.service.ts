@@ -11,7 +11,7 @@ export class LoginService {
   constructor(private httpClient: HttpClient) {
   }
 
-  loginPost(loginRequest: LoginRequest) {
+  loginUser(loginRequest: LoginRequest) {
     return this.httpClient.post("http://localhost:8080/auth", loginRequest)
   }
 
