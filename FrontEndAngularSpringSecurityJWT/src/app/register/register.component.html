@@ -40,8 +40,7 @@
 
       <mat-form-field>
         <input type="repeatedPassword" matInput placeholder="Repeat Password" formControlName="repeatedPassword" [(ngModel)]="repeatedPassword">
-        <mat-error
-          *ngIf="this.registerForm.get('repeatedPassword')?.touched && this.registerForm.get('repeatedPassword')?.hasError('required')">
+        <mat-error *ngIf="this.registerForm.errors?.['confirmedValidator']">
           Passwords must be the same
         </mat-error>
       </mat-form-field>

@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   password = '';
   loginForm: FormGroup = new FormGroup({
     username: new FormControl(null, [Validators.required]),
-    password: new FormControl(null, [Validators.required]),
+    password: new FormControl(null, [Validators.required])
   });
 
   constructor(
@@ -32,9 +32,7 @@ export class LoginComponent implements OnInit {
         console.log(data.token)
         if (data.token !== null){
           this.router.navigateByUrl('')
-        }
-
-      })
+        }})
 
 
 

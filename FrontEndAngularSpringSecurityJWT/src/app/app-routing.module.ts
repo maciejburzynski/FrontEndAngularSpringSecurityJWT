@@ -4,6 +4,7 @@ import {LoginComponent} from './login/login.component'
 import {RegisterComponent} from './register/register.component'
 import {AppComponent} from "./app.component";
 import {HomepageComponent} from "./homepage/homepage.component";
+import {AccountActivationComponent} from "./account-activation/account-activation.component";
 
 
 const routes: Routes = [
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'account-activation',
+    component: AccountActivationComponent
   }
 ];
 

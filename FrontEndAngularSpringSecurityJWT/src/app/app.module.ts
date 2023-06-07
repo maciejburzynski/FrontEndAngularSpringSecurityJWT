@@ -14,7 +14,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {MatCardModule} from "@angular/material/card";
 import {provideAnimations} from "@angular/platform-browser/animations";
 import { SpinnerComponent } from './spinner/spinner.component';
-import { LoadingInterceptor } from './loading.interceptor';
+import { LoadingInterceptor } from './spinner/loading.interceptor';
+import { AccountActivationComponent } from './account-activation/account-activation.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LoadingInterceptor } from './loading.interceptor';
     HomepageComponent,
     LoginComponent,
     RegisterComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    AccountActivationComponent
   ],
   imports: [
     BrowserModule,

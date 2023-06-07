@@ -12,7 +12,7 @@ export class LoginService {
   }
 
   loginUser(loginRequest: LoginRequest) {
-    return this.httpClient.post("http://localhost:8080/auth", loginRequest)
+    return this.httpClient.post("http://localhost:8080/login/users", loginRequest)
   }
 
   getHello() {
