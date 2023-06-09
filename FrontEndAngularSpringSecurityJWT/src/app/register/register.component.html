@@ -39,7 +39,7 @@
       <p></p>
 
       <mat-form-field>
-        <input type="repeatedPassword" matInput placeholder="Repeat Password" formControlName="repeatedPassword" [(ngModel)]="repeatedPassword">
+        <input type="password" matInput placeholder="Repeat Password" formControlName="repeatedPassword" [(ngModel)]="repeatedPassword">
         <mat-error *ngIf="this.registerForm.errors?.['confirmedValidator']">
           Passwords must be the same
         </mat-error>
@@ -47,7 +47,7 @@
       <p></p>
 
       <div class="button">
-        <button type="submit" mat-button [disabled]="!registerForm.valid">Login</button>
+        <button type="submit" mat-button [disabled]="!registerForm.valid">Register</button>
       </div>
     </form>
   </mat-card-content>

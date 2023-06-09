@@ -17,11 +17,15 @@ export class RegisterService {
   }
 
   registerUser(registerRequest: RegisterRequest) {
-    return this.httpClient.post("http://localhost:8080/register/users", registerRequest,{observe: ('response')})
-      .subscribe((response:any) => {
+    return this.httpClient
+      .post("http://localhost:8080/registration/users", registerRequest,
+        {observe: ('response'), withCredentials: true})
+      .subscribe((response: any) => {
         let data = (<RegisterResponse>response);
-        console.log(data.token)
-        if (data.token !== null){
+        console.log(response)
+        if (data.token !== null) {
           this.router.navigateByUrl('/account-activation')
-        }})  }
+        }
+      })
+  }
 }

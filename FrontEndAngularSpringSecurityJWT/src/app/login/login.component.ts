@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {LoginService} from "./login.service";
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {LoginResponse} from "./LoginResponse";
 
 
@@ -27,13 +27,13 @@ export class LoginComponent implements OnInit {
   login(): any {
     console.log("username: " + this.username + "password: " + this.password)
     return this.loginService.loginUser({username: this.username, password: this.password})
-      .subscribe((response:any) => {
+      .subscribe((response: any) => {
         let data = (<LoginResponse>response);
         console.log(data.token)
-        if (data.token !== null){
+        if (data.token !== null) {
           this.router.navigateByUrl('')
-        }})
-
+        }
+      })
 
 
   }

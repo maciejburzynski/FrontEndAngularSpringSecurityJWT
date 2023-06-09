@@ -1,1 +1,24 @@
-<p>account-activation works!</p>
+<div>
+  <mat-card-title>Account Activation</mat-card-title>
+  <p></p>
+  <mat-card-content>
+    <form [formGroup]="activationCodeForm" (ngSubmit)="sendToVerify()">
+      <mat-form-field>
+        <input type="activationCode" matInput placeholder="Activation Code" formControlName="activationCode" [(ngModel)]="activationCode">
+        <mat-error
+          *ngIf="this.activationCodeForm.get('activationCode')?.touched && this.activationCodeForm.get('activationCode')?.hasError('required')">
+          Activation Code is required
+        </mat-error>
+        <mat-error
+          *ngIf="this.activationCodeForm.get('activationCode')?.touched && this.activationCodeForm.get('activationCode')?.hasError('activationCode')">
+          Activatione Code must be valid
+        </mat-error>
+      </mat-form-field>
+
+      <div class="button">
+        <button type="submit" mat-button [disabled]="!activationCodeForm.valid">Activate</button>
+      </div>
+    </form>
+
+  </mat-card-content>
+</div>
